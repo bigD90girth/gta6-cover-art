@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vice Cover — GTA-style cover maker</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<main class="app">
+  <section class="controls">
+    <h1>Vice Cover</h1>
+    <p class="tag">Turn your photos into sunset-neon cover art. Pick a layout, drop in photos, write a caption, export the PNG.</p>
+    <fieldset>
+      <legend>Layout</legend>
+      <div class="row">
+        <button type="button" data-layout="hero" class="active">Hero</button>
+        <button type="button" data-layout="trio">Trio</button>
+        <button type="button" data-layout="duo">Duo</button>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Size</legend>
+      <div class="row">
+        <button type="button" data-size="1080x1080">1080 × 1080</button>
+        <button type="button" data-size="1080x1350">1080 × 1350</button>
+        <button type="button" data-size="1920x1080" class="active">1920 × 1080</button>
+      </div>
+    </fieldset>
+    <fieldset id="panels"><legend>Panels — click a panel on the cover to pick it</legend></fieldset>
+    <label>Caption <input id="caption" type="text" maxlength="40" value="Sunset Heist"></label>
+    <label>Sub-caption <input id="subcaption" type="text" maxlength="40" value="Vice City • 2026"></label>
+    <fieldset>
+      <legend>Caption colour</legend>
+      <div class="row">
+        <button type="button" data-color="#ffffff" class="swatch active" style="--c:#ffffff" aria-label="White"></button>
+        <button type="button" data-color="#ffd34d" class="swatch" style="--c:#ffd34d" aria-label="Yellow"></button>
+        <button type="button" data-color="#ff5fa2" class="swatch" style="--c:#ff5fa2" aria-label="Pink"></button>
+      </div>
+    </fieldset>
+    <button id="export" type="button">Export PNG</button>
+    <p id="status" role="status"></p>
+  </section>
+  <section class="preview">
+    <canvas id="cover" width="1920" height="1080" aria-label="The cover"></canvas>
+  </section>
+</main>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
